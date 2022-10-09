@@ -52,7 +52,16 @@ const queries = [
   [4, 1],
   [1, 8],
 ];
+
+//바보였다 배열은 0번부터 시작인데 1을 하니 자꾸 안되서 맨붕이왔다...
+
 for (let i = 0; i < queries.length; i++) {
-  console.log(arr3[queries[i][0]].push(3));
+  let num = queries[i][0];
+  let res = queries[num - 1][1];
+  console.log(num);
+  arr3[num - 1].push(res);
 }
-console.log("arr3", arr3);
+
+for (let i = 0; i < arr3.length; i++) {
+  console.log("arr3", arr3[i][0]);
+}
