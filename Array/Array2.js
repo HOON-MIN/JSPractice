@@ -11,7 +11,7 @@ const queries = [
 
 const answer = [];
 
-const arr5 = Array.from(Array(4), () => Array(1).fill(queries[0][1]));
+const arrlist = Array.from(Array(4), () => Array(1).fill(queries[0][1]));
 
 for (let i = 1; i < queries.length; i++) {
   let num = queries[i][0];
@@ -19,27 +19,27 @@ for (let i = 1; i < queries.length; i++) {
   console.log(num);
   console.log(res);
   if (queries[i][1] == -1) {
-    const popnum = arr5[num - 1].pop(res);
-    console.log("arr5", arr5[num].length);
-    console.log("비교", arr5[num].length == 1);
-    if (arr5[num - 1] == 0) {
+    const popnum = arrlist[num - 1].pop(res);
+    console.log("arrlist", arrlist[num].length);
+    console.log("비교", arrlist[num].length == 1);
+    if (arrlist[num - 1] == 0) {
       switch (num) {
         case 1:
-          for (let j = 0; j < arr5.length; j++) {
-            if (arr5[num].length != 1) {
-              const fillnum = arr5[num][1];
-              arr5[j][0] = fillnum;
+          for (let j = 0; j < arrlist.length; j++) {
+            if (arrlist[num].length != 1) {
+              const fillnum = arrlist[num][1];
+              arrlist[j][0] = fillnum;
             } else {
               num = num + 1;
             }
           }
           break;
         case 2:
-          for (let j = 0; j < arr5.length; j++) {
-            if (arr5[num].length != 1) {
-              const fillnum = arr5[num][1];
-              for (let i = 0; i < arr5.length; i++) {
-                arr5[i][0] = fillnum;
+          for (let j = 0; j < arrlist.length; j++) {
+            if (arrlist[num].length != 1) {
+              const fillnum = arrlist[num][1];
+              for (let i = 0; i < arrlist.length; i++) {
+                arrlist[i][0] = fillnum;
               }
             } else {
               if (num != 3) {
@@ -49,14 +49,14 @@ for (let i = 1; i < queries.length; i++) {
               }
             }
           }
-          arr5[num].pop();
+          arrlist[num].pop();
           break;
         case 3:
-          for (let j = 0; j < arr5.length; j++) {
-            if (arr5[num].length != 1) {
-              const fillnum = arr5[num][1];
-              for (let i = 0; i < arr5.length; i++) {
-                arr5[i][0] = fillnum;
+          for (let j = 0; j < arrlist.length; j++) {
+            if (arrlist[num].length != 1) {
+              const fillnum = arrlist[num][1];
+              for (let i = 0; i < arrlist.length; i++) {
+                arrlist[i][0] = fillnum;
               }
             } else {
               if (num != 3) {
@@ -66,14 +66,14 @@ for (let i = 1; i < queries.length; i++) {
               }
             }
           }
-          arr5[num].pop();
+          arrlist[num].pop();
           break;
         case 4:
-          for (let j = 0; j < arr5.length; j++) {
-            if (arr5[num].length != 1) {
-              const fillnum = arr5[num][1];
-              for (let i = 0; i < arr5.length; i++) {
-                arr5[i][0] = fillnum;
+          for (let j = 0; j < arrlist.length; j++) {
+            if (arrlist[num].length != 1) {
+              const fillnum = arrlist[num][1];
+              for (let i = 0; i < arrlist.length; i++) {
+                arrlist[i][0] = fillnum;
               }
             } else {
               if (num != 3) {
@@ -83,17 +83,17 @@ for (let i = 1; i < queries.length; i++) {
               }
             }
           }
-          arr5[num].pop();
+          arrlist[num].pop();
           break;
       }
     }
     answer.push(popnum);
   } else {
-    arr5[num - 1].push(res);
+    arrlist[num - 1].push(res);
   }
 }
 
-for (let i = 0; i < arr5.length; i++) {
-  console.log(arr5[i]);
+for (let i = 0; i < arrlist.length; i++) {
+  console.log(arrlist[i]);
 }
 console.log("answer", answer);
