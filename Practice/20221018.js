@@ -42,3 +42,11 @@ function solution4(n) {
   var half = Math.floor(n / 2);
   return half * (half + 1);
 }
+
+console.log("score", score);
+score = 80;
+var score;
+score = 90;
+console.log("score2", score);
+
+console.log("맞아?", Math.floor(120 / 100));
